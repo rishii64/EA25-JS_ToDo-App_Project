@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main_container">
+        <div class="header">
+            <h1 class="head1">Task  <span>List</span></h1>
+            <h2 class="head2">➕ Add Items</h2>
+        </div>
+        <div class="popup_card hidden">
+            <span class="card_head" style="font-size:x-large;">Add New List</span>
+            <input id="cardName" class="input" type="text" autocomplete="off">
+            <div class="card_buttons">
+                <button class="btn1">Add</button>
+                <button class="btn2">Close</button>
+            </div>
+        </div>
+        <div class="card_container">
+            <!-- <p class="note">No items in the ToDo List</p> -->
+            <template>
+                <div class="card">
+                    <h3 class="title">Trip to Bhutan</h3>
+                    <div class="task_lists">
+
+                    </div>
+                    <div class="buttons">
+                        <button class="delete">🗑️</button>
+                        <button class="add">➕</button>
+                    </div>
+                </div>
+            </template>
+            
+        </div>
+        <div class="overlay hidden"></div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
