@@ -140,6 +140,8 @@ p{
 }
 .title{
     font-family: sans-serif;
+    width: 100%;
+    text-align: center;
 }
 .card{
     width: 250px;
@@ -209,4 +211,11 @@ h3{
     padding: 5px 15px;
     margin-top: 5px;
     gap: 10px;
+}
+.taskDone{
+    text-decoration: line-through;
+    font-weight: bold;
+    color: tomato;
+    width: 100%;
+    text-align: center;
 }

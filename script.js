@@ -11,6 +11,7 @@ const note = document.querySelector('.note');
 const popuplist = document.querySelector('.card_head');
 const popupItem = document.querySelector('.card_head2');
 let currentTaskList;
+let cardCounter = 0;
 
 // Opening Popup1 Menu
 btnPopup.addEventListener('click', function(){
@@ -21,6 +22,39 @@ function Overlay(parentPopup){
     parentPopup.classList.add('hidden');
     console.log(parentPopup);
     overlay.style.display = 'none';
+}
+function noteHide(){
+    if(cardCounter===0)
+        note.style.display='block';
+    else
+        note.style.display='none';
+}
+
+function createList(listName){
+    // creating itemlist
+    const item = document.createElement('div');
+    const itemText = document.createElement('span');
+    const markDone = document.createElement('button');
+    
+
+    item.classList.add('item');
+    itemText.classList.add('itemText');
+    markDone.classList.add('mark');
+
+    // appending itemlist elements
+    item.appendChild(itemText);
+    item.appendChild(markDone);
+
+    // giving values itemlist elements
+    itemText.innerText = listName;
+    markDone.innerText = 'Mark Done';
+    currentTaskList.appendChild(item);
+
+    markDone.addEventListener('click', (e)=>{
+        e.target.previousElementSibling.classList.add('taskDone');
+        e.target.style.display='none';
+    })
+    
 }
 
 // Creating card
@@ -56,10 +90,12 @@ function createCard(cardName){
     // deleting card
     btnCardDelete.addEventListener('click',(e)=>{
         let parent_card = (e.target.parentNode.parentNode);
-        parent_card.classList.add('delete_card')
+        parent_card.classList.add('delete_card');
+        cardCounter--;
         setTimeout(()=>{
             parent_card.remove();
-        },800)
+            noteHide();
+        },800);
     })
 
     // adding card task
@@ -70,42 +106,29 @@ function createCard(cardName){
     })
 
     
-    function createList(listName){
-        // creating itemlist
-        const item = document.createElement('div');
-        const itemText = document.createElement('span');
-        const markDone = document.createElement('button');
-        
-
-        item.classList.add('item');
-        itemText.classList.add('itemText');
-        markDone.classList.add('mark');
-
-        // appending itemlist elements
-        item.appendChild(itemText);
-        item.appendChild(markDone);
-
-        // giving values itemlist elements
-        itemText.innerText = listName;
-        markDone.innerText = 'Mark Done';
-        currentTaskList.appendChild(item);
-        
-    }
     
+    // adding task in card
     btnAddTask.addEventListener('click', ()=>{
         const listName = document.getElementById('listName');
         createList(listName.value);
         overlay.addEventListener('click', Overlay);
+
     }) 
 };
 
+
+    // 
     btnPopupClose.forEach((btn)=>{
         btn.addEventListener('click',(e)=>{
             Overlay(e.target.parentNode.parentNode);
+            e.target.parentNode.previousElementSibling.value='';
         })
     })
+
     //adding card
     btnPopupAdd.addEventListener('click', function(){
+        cardCounter++;
+        noteHide();
         createCard(cardNameInput.value);
-        note.style.display='none'; 
+
     });
