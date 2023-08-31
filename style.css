@@ -32,8 +32,12 @@ span{
 p{
     /* border: 1px solid red; */
     font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-.popup_card{
+.popup_card,.popup_Task{
     /* border: 1px solid red; */
     width: 350px;
     height: 200px;
@@ -49,12 +53,12 @@ p{
     flex-direction: column;
     gap: 10px;
     z-index: 1;
-    animation: slide .6s ease-in;
+    animation: slide .5s ease-in;
 }
 @keyframes slide {
     0%{
         top: 0%;
-        left: 60%;
+        left: 50%;
         scale: 0;
         opacity: 0;
     }
@@ -62,6 +66,19 @@ p{
         top: 50%;
         left: 50%;
         scale: 1;
+        opacity: 1;
+    }
+}
+.popup_Task{
+    animation: swipe .8s ease;
+}
+@keyframes swipe {
+    0%{
+        top: 80%;
+        opacity: 0;
+    }
+    100%{
+        top: 50%;
         opacity: 1;
     }
 }
@@ -74,18 +91,24 @@ p{
     height: 100%;
     backdrop-filter: blur(3px);
 }
+
 .hidden{
     display: none;
 }
 .input{
     width: 280px;
     height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-family: cursive;
+    /* display: grid;
+    place-items: center; */
 }
 .card_buttons{
     display: flex;
     gap: 20px;
 }
-.btn1,.btn2{
+.btn1,.btn2,.btn3,.btn4{
     width: 100px;
     height: 40px;
     border: none;
@@ -94,7 +117,7 @@ p{
     background-color: rgb(255, 77, 12);
     color: white;
 }
-.head2,.btn1,.btn2:hover{
+.head2,.btn1,.btn2,button:hover{
     cursor: pointer;
 }
 .main_container{
@@ -115,6 +138,9 @@ p{
     gap: 20px;
     overflow-y: auto;
 }
+.title{
+    font-family: sans-serif;
+}
 .card{
     width: 250px;
     height: 300px;
@@ -124,6 +150,24 @@ p{
     /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     position: relative;
+}
+.delete_card{
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+    animation: out .8s ease-out;
+}
+@keyframes out{
+    from{
+        display: flex;
+        opacity: 1;
+        transform: scale(1);
+    }
+    to{
+        display: none;
+        opacity: 0;
+        transform: scale(0);
+    }
 }
 h3{
     height: 40px;
@@ -139,12 +183,30 @@ h3{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 15px;
+    gap: 20px;
+    padding: 5px 15px;
     position: absolute;
     bottom: 0;
+}
+.delete,.add{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background-color: rgb(199, 197, 190);
 }
 .task_lists{
     /* border: 1px solid red; */
     height: 215px;
     overflow-y: auto;
+}
+.item{
+    /* border: 2px dashed violet; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    margin-top: 5px;
+    gap: 10px;
 }

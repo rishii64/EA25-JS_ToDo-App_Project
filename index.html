@@ -12,7 +12,7 @@
             <h1 class="head1">Task  <span>List</span></h1>
             <h2 class="head2">➕ Add Items</h2>
         </div>
-        <div class="popup_card hidden">
+        <div class="popup_card hidden ">
             <span class="card_head" style="font-size:x-large;">Add New List</span>
             <input id="cardName" class="input" type="text" autocomplete="off">
             <div class="card_buttons">
@@ -20,12 +20,29 @@
                 <button class="btn2">Close</button>
             </div>
         </div>
+        <div class="popup_Task hidden">
+            <span class="card_head2" style="font-size:x-large;">Add New Item</span>
+            <input id="listName" class="input" type="text" autocomplete="off">
+            <div class="card_buttons">
+                <button class="btn3">Add</button>
+                <button class="btn2">Close</button>
+            </div>
+        </div>
+
         <div class="card_container">
-            <!-- <p class="note">No items in the ToDo List</p> -->
-            <template>
+            <p class="note">No items in the ToDo List</p>
+
+            <template 1>
                 <div class="card">
                     <h3 class="title">Trip to Bhutan</h3>
                     <div class="task_lists">
+
+                        <template 2>
+                            <div class="item">
+                                <span class="itemText"></span>
+                                <button class="mark">Mark Done</button>
+                            </div>
+                        </template 2>
 
                     </div>
                     <div class="buttons">
@@ -33,8 +50,8 @@
                         <button class="add">➕</button>
                     </div>
                 </div>
-            </template>
-            
+            </template 1>
+
         </div>
         <div class="overlay hidden"></div>
     </div>
