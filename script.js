@@ -56,7 +56,6 @@ function createList(listName){
     })
     
 }
-
 // Creating card
 function createCard(cardName){
     const card = document.createElement('div');
@@ -98,26 +97,24 @@ function createCard(cardName){
         },800);
     })
 
-    // adding card task
+    // 
     btnCardAdd.addEventListener('click',function(e){
         popupTask.classList.remove('hidden');
         overlay.style.display = 'block'; 
         currentTaskList = e.target.parentNode.previousSibling;
     })
-
-    
-    
-    // adding task in card
+};
+    // adding task in card | Opening Popup2 Menu
     btnAddTask.addEventListener('click', ()=>{
         const listName = document.getElementById('listName');
         createList(listName.value);
+        listName.value='';
         overlay.addEventListener('click', Overlay);
-
+        popupTask.classList.add('hidden');
+        overlay.style.display = 'none';
     }) 
-};
 
-
-    // 
+    // closing Popup1 Menu
     btnPopupClose.forEach((btn)=>{
         btn.addEventListener('click',(e)=>{
             Overlay(e.target.parentNode.parentNode);
@@ -130,5 +127,9 @@ function createCard(cardName){
         cardCounter++;
         noteHide();
         createCard(cardNameInput.value);
-
+        popupCard.classList.add('hidden');
+        overlay.style.display = 'none';
     });
+
+
+
