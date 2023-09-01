@@ -12,6 +12,12 @@ const popuplist = document.querySelector('.card_head');
 const popupItem = document.querySelector('.card_head2');
 let currentTaskList;
 let cardCounter = 0;
+const singleCard = document.querySelector('.singleCard_container');
+const singleCardHead = document.querySelector('#singleCardHeading');
+const backBtn = document.getElementById('btnBack');
+const head1 = document.querySelector('.head1');
+const head2Text = document.getElementById('head2Text');
+let currentSingleCard;
 
 // Opening Popup1 Menu
 btnPopup.addEventListener('click', function(){
@@ -20,7 +26,6 @@ btnPopup.addEventListener('click', function(){
 });
 function Overlay(parentPopup){
     parentPopup.classList.add('hidden');
-    console.log(parentPopup);
     overlay.style.display = 'none';
 }
 function noteHide(){
@@ -30,32 +35,6 @@ function noteHide(){
         note.style.display='none';
 }
 
-function createList(listName){
-    // creating itemlist
-    const item = document.createElement('div');
-    const itemText = document.createElement('span');
-    const markDone = document.createElement('button');
-    
-
-    item.classList.add('item');
-    itemText.classList.add('itemText');
-    markDone.classList.add('mark');
-
-    // appending itemlist elements
-    item.appendChild(itemText);
-    item.appendChild(markDone);
-
-    // giving values itemlist elements
-    itemText.innerText = listName;
-    markDone.innerText = 'Mark Done';
-    currentTaskList.appendChild(item);
-
-    markDone.addEventListener('click', (e)=>{
-        e.target.previousElementSibling.classList.add('taskDone');
-        e.target.style.display='none';
-    })
-    
-}
 // Creating card
 function createCard(cardName){
     const card = document.createElement('div');
@@ -94,17 +73,54 @@ function createCard(cardName){
         setTimeout(()=>{
             parent_card.remove();
             noteHide();
+            singleCardHead.innerText='';
         },800);
     })
 
-    // 
     btnCardAdd.addEventListener('click',function(e){
         popupTask.classList.remove('hidden');
         overlay.style.display = 'block'; 
         currentTaskList = e.target.parentNode.previousSibling;
     })
+
+    // opening single card
+    title.addEventListener('click', (e)=>{
+        singleCard.classList.remove('hidden');
+        currentSingleCard =  e.target.parentNode;
+        currentSingleCard.classList.add('singleCard');
+        head1.style.display='none';
+        backBtn.style.display='block';
+        head2Text.style.display='none';
+        singleCardHead.innerText=e.target.innerText;
+    })
 };
-    // adding task in card | Opening Popup2 Menu
+    
+function createList(listName){
+    // creating itemlist
+    const item = document.createElement('div');
+    const itemText = document.createElement('span');
+    const markDone = document.createElement('button');
+    
+    item.classList.add('item');
+    itemText.classList.add('itemText');
+    markDone.classList.add('mark');
+
+    // appending itemlist elements
+    item.appendChild(itemText);
+    item.appendChild(markDone);
+
+    // giving values itemlist elements
+    itemText.innerText = listName;
+    markDone.innerText = 'Mark Done';
+    currentTaskList.appendChild(item);
+
+    markDone.addEventListener('click', (e)=>{
+        e.target.previousElementSibling.classList.add('taskDone');
+        e.target.style.display='none';
+    })
+}
+
+    // adding task in card  |   Opening Popup2 Menu
     btnAddTask.addEventListener('click', ()=>{
         const listName = document.getElementById('listName');
         createList(listName.value);
@@ -114,7 +130,7 @@ function createCard(cardName){
         overlay.style.display = 'none';
     }) 
 
-    // closing Popup1 Menu
+    // closing Popup1 & Popup2 Menu
     btnPopupClose.forEach((btn)=>{
         btn.addEventListener('click',(e)=>{
             Overlay(e.target.parentNode.parentNode);
@@ -131,5 +147,19 @@ function createCard(cardName){
         overlay.style.display = 'none';
     });
 
+    backBtn.addEventListener('click',()=>{
+        singleCard.classList.add('hidden');
+        currentSingleCard.classList.remove('singleCard');
+        head1.style.display='block';
+        backBtn.style.display='none';
+        head2Text.style.display='block';
+    })
 
-
+    // from{
+    //     /* transform:  scale(1); */
+    //     opacity: 1;
+    // }
+    // to{
+    //     /* transform:  scale(0); */
+    //     opacity: 0;
+    // }
