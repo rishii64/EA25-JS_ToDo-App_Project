@@ -15,13 +15,14 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6em;
+    padding: 0 6rem;
     background:  #c3ff79;
     background: linear-gradient(147deg, #358929  0%, #87dc5d 74%);;
     box-shadow: rgba(0, 0, 0, 0.7) 0px 25px 20px -20px;
     position: relative;
     z-index: 5;
 }
+
 .head1{
     font-size: 2.5em;
 }
@@ -214,6 +215,12 @@ h3{
     margin-top: 5px;
     gap: 10px;
 }
+.mark{
+    background-color: rgba(36, 36, 240, 0.925);
+    color: white;
+    border-radius: 5px;
+    padding: 0 3px;
+}
 .taskDone{
     text-decoration: line-through;
     font-weight: bold;
@@ -245,7 +252,39 @@ h3{
     transform: translate(-50%,-16%);
     font-size: 50px;
 }
+@media screen and (max-width:700px) {
+    .head1{
+        font-size: 1.5rem;
+    }
+    .head2{
+        font-size: 1.2rem;
+    }
+    .header{
+        padding: 0 20px;
+    }
+    p{
+        font-size: 1em;
+    }
+    .popup_card,.popup_Task,.input{
+        width: 70%;
+    }
+    .btn1,.btn2,.btn3,#btnBack{
+        width: 60px;
+        height: 40px;
+        font-size: 1em;
+    }
+    .mark{
+        padding: 0 2px;
+    }
+    .card_container{
+        padding: 0 3em;
+    }
+    .card{
+        width: 14rem;
+    }
+}
 
+/* Animation */
 /* 20%{
     transform: scale(1.15);
 }
