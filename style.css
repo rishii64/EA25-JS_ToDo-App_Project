@@ -22,7 +22,6 @@ body{
     position: relative;
     z-index: 5;
 }
-
 .head1{
     font-size: 2.5em;
 }
@@ -284,13 +283,14 @@ h3{
     .card_container{
         padding: 0 2em 2em 2em;
         justify-content: center;
+        margin-top: 10px;
     }
     .card{
         width: 14rem;
         height: 16rem;
     }
     .buttons{
-        bottom: 5px;
+        bottom: 0px;
     }
     .task_lists{
         height: 10.5rem;
