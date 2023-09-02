@@ -277,7 +277,7 @@ h3{
         padding: 0 2px;
     }
     .card_container{
-        padding: 0 3em;
+        padding: 0 2em 2em 2em;
         justify-content: center;
     }
     .card{
@@ -285,7 +285,10 @@ h3{
         height: 16rem;
     }
     .buttons{
-        bottom: 0px;
+        bottom: 5px;
+    }
+    .task_lists{
+        height: 10.5rem;
     }
 }
 
