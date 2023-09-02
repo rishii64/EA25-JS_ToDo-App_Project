@@ -152,6 +152,8 @@ p{
     font-family: sans-serif;
     width: 100%;
     text-align: center;
+    background-color: rgb(243, 243, 209);
+    border-radius: 10px 10px 0px 0px;
 }
 .card{
     width: 250px;
@@ -251,6 +253,9 @@ h3{
     left: 50%;
     transform: translate(-50%,-16%);
     font-size: 50px;
+}
+.fa-solid,button:hover{
+    cursor: pointer;
 }
 @media screen and (max-width:700px) {
     .head1{
