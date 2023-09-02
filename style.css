@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgba(234, 224, 180, 0.829);
+    background: linear-gradient(147deg, #a399b2 0%, #4d4855 74%);
     overflow: hidden;
 }
 ::-webkit-scrollbar{
@@ -16,7 +16,8 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0 6em;
-    background:  #a0f5a1d0;
+    background:  #c3ff79;
+    background: linear-gradient(147deg, #358929  0%, #87dc5d 74%);;
     box-shadow: rgba(0, 0, 0, 0.7) 0px 25px 20px -20px;
     position: relative;
     z-index: 5;
@@ -37,6 +38,7 @@ span{
 }
 p{
     font-size: 2em;
+    color: white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,7 +59,7 @@ p{
     flex-direction: column;
     gap: 10px;
     z-index: 6;
-    animation: slide .5s ease-in;
+    animation: slide .8s ease;
 }
 @keyframes slide {
     0%{
@@ -87,14 +89,14 @@ p{
     }
 }
 .overlay{
-    background: rgba(0, 0, 0, 0.74);
+    background: rgba(0, 0, 0, 0.3);
     height: 100%;
     position: absolute;
     z-index: 5;
     top: 0px;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
 }
 .hidden{
     display: none;
@@ -102,7 +104,7 @@ p{
 #btnBack{
     display: none;
     width: 80px;
-    height: 35px;
+    height: 40px;
     border-radius: 10px;
     font-size: 22px;
 }
@@ -165,11 +167,11 @@ p{
     transition: 800ms;
 }
 @keyframes out{
-    20%{
-        transform: scale(1.15);
+    from{
+            opacity: 1;
     }
-    100%{
-        transform: scale(0);
+    to{
+        opacity: 0;
     }
 }
 h3{
@@ -177,7 +179,6 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1.6px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -195,7 +196,10 @@ h3{
     border-radius: 50%;
     border: none;
     color: white;
-    background-color: rgb(231, 227, 227);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(227, 85, 14);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 .task_lists{
@@ -222,14 +226,14 @@ h3{
     top: 0%;
     width: 100%;
     height: 100vh;
-    background-color: rgb(234, 224, 180);
+    background: linear-gradient(147deg, #a399b2 0%, #4d4855 74%);;
     z-index: 3;
 }
 .singleCard{
     position: absolute;
     top: 65%;
     left: 50%;
-    transform: translate(-50%,-60%);
+    transform: translate(-50%,-65%);
     z-index: 4;
 }
 #singleCardHeading{
@@ -241,3 +245,10 @@ h3{
     transform: translate(-50%,-16%);
     font-size: 50px;
 }
+
+/* 20%{
+    transform: scale(1.15);
+}
+100%{
+    transform: scale(0);
+} */

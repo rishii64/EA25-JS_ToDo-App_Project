@@ -41,15 +41,15 @@ function createCard(cardName){
     const title = document.createElement('h3');
     const lists = document.createElement('div');
     const buttons = document.createElement('div');
-    const btnCardDelete = document.createElement('button');
-    const btnCardAdd = document.createElement('button');
+    const btnCardDelete = document.createElement('i');
+    const btnCardAdd = document.createElement('i');
     
     card.classList.add('card');
     title.classList.add('title');
     lists.classList.add('task_lists');
     buttons.classList.add('buttons');
-    btnCardDelete.classList.add('delete');
-    btnCardAdd.classList.add('add');
+    btnCardDelete.classList.add('delete', 'fa-solid', 'fa-trash');
+    btnCardAdd.classList.add('add','fa-solid', 'fa-plus');
     
     // appending card elements
     card.appendChild(title);
@@ -62,8 +62,6 @@ function createCard(cardName){
     // giving values to card elements
     title.innerText = cardName;
     cardNameInput.value = '';
-    btnCardDelete.innerText = '🗑️';
-    btnCardAdd.innerText = '➕';
 
     // deleting card
     btnCardDelete.addEventListener('click',(e)=>{
@@ -155,11 +153,4 @@ function createList(listName){
         head2Text.style.display='block';
     })
 
-    // from{
-    //     /* transform:  scale(1); */
-    //     opacity: 1;
-    // }
-    // to{
-    //     /* transform:  scale(0); */
-    //     opacity: 0;
-    // }
+    
