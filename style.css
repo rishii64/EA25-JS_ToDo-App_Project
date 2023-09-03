@@ -264,7 +264,7 @@ h3{
         font-size: 1.2rem;
     }
     .header{
-        padding: 0 20px;
+        padding: 0 2.5rem;
     }
     p{
         font-size: 1em;
@@ -272,16 +272,21 @@ h3{
     .popup_card,.popup_Task,.input{
         width: 70%;
     }
-    .btn1,.btn2,.btn3,#btnBack{
+    .btn1,.btn2,.btn3{
         width: 60px;
         height: 40px;
+        font-size: 1em;
+    }
+    #btnBack{
+        width: 45px;
+        height: 30px;
         font-size: 1em;
     }
     .mark{
         padding: 0 2px;
     }
     .card_container{
-        padding: 0 2em 0 2em;
+        padding: 0 2em 3em 2em;
         justify-content: center;
     }
     .card{
