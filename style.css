@@ -127,7 +127,7 @@ p{
     background-color: rgb(255, 77, 12);
     color: white;
 }
-.head2,.btn1,.btn2,button:hover{
+.head2,.btn1,.btn2,button,.title:hover{
     cursor: pointer;
 }
 .main_container{
