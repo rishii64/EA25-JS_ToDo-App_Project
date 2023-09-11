@@ -90,7 +90,6 @@ p{
 }
 .overlay{
     background: rgba(0, 0, 0, 0.3);
-    height: 100%;
     position: absolute;
     z-index: 5;
     top: 0px;

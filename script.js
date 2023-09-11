@@ -34,7 +34,6 @@ function noteHide(){
     else
         note.style.display='none';
 }
-
 // Creating card
 function createCard(cardName){
     const card = document.createElement('div');
@@ -92,7 +91,6 @@ function createCard(cardName){
         singleCardHead.innerText=e.target.innerText;
     })
 };
-    
 function createList(listName){
     // creating itemlist
     const item = document.createElement('div');
@@ -117,7 +115,6 @@ function createList(listName){
         e.target.style.display='none';
     })
 }
-
     // adding task in card  |   Opening Popup2 Menu
     btnAddTask.addEventListener('click', ()=>{
         const listName = document.getElementById('listName');
@@ -127,7 +124,6 @@ function createList(listName){
         popupTask.classList.add('hidden');
         overlay.style.display = 'none';
     }) 
-
     // closing Popup1 & Popup2 Menu
     btnPopupClose.forEach((btn)=>{
         btn.addEventListener('click',(e)=>{
@@ -135,7 +131,6 @@ function createList(listName){
             e.target.parentNode.previousElementSibling.value='';
         })
     })
-
     //adding card
     btnPopupAdd.addEventListener('click', function(){
         cardCounter++;
@@ -152,5 +147,3 @@ function createList(listName){
         backBtn.style.display='none';
         head2Text.style.display='block';
     })
-
-    
